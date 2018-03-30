@@ -1,4 +1,4 @@
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
@@ -16,7 +16,7 @@ class S(BaseHTTPRequestHandler):
         self.wfile.write("{" + '"validationResponse": "' +  data[0]['data']['validationCode'] + '"}')
 
 
-def run(server_class=HTTPServer, handler_class=S, port=80):
+def run(server_class=HTTPServer, handler_class=S, port=8080):
     server_address = ('', port)
     server = server_class(server_address, handler_class)
     print('Running...')
@@ -24,9 +24,4 @@ def run(server_class=HTTPServer, handler_class=S, port=80):
 
 
 if __name__ == "__main__":
-    from sys import argv
-
-    if len(argv) == 2:
-        run(port=int(argv[1]))
-    else:
-        run()
+     run()
