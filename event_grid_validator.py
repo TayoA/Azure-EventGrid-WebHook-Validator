@@ -1,4 +1,4 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
@@ -13,6 +13,7 @@ class S(BaseHTTPRequestHandler):
         clen = int(self.headers['Content-Length'])
         data = json.loads(self.rfile.read(clen))
         self._set_headers()
+        print("{" + '"validationResponse": "' +  data[0]['data']['validationCode'] + '"}')
         self.wfile.write("{" + '"validationResponse": "' +  data[0]['data']['validationCode'] + '"}')
 
 
