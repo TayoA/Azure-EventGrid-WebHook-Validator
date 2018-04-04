@@ -11,4 +11,4 @@ When you register your own WebHook endpoint with Event Grid, it sends you a POST
 * The array contains only the validation event. Other events are sent in a separate request after you echo back the validation code.
 
 ## Usage
-Just run it using Python3 interpreter. By default it runs on port 8080. You need to have a reverse proxy with SSL enabled (https is obligatory for Azure Event Grid WebHooks).
+Just run it using Python 2.7 interpreter. By default it runs on port 8080. You need to have a reverse proxy with SSL enabled (https is obligatory for Azure Event Grid WebHooks).
